@@ -1,3 +1,5 @@
+This branch provides support for pre-2.80 blender versions
+
 addonsByMe is a collection of blender addons that I have created.
 This allows better tracking of my work and issues to be reported
 separate from the official contrib addons.
