@@ -30,7 +30,7 @@
 bl_info = {
     "name": "Mesh Summary",
     "author": "sambler",
-    "version": (1,2),
+    "version": (1,3),
     "blender": (2, 80, 0),
     "location": "Properties > Scene > Object Info Panel",
     "description": "Summarize details about the mesh objects in this file.",
@@ -158,7 +158,7 @@ class Properties_meshinfo(bpy.types.Panel):
                 if prefs.calculate_modifier_verts:
                     detailRow = dataCols[2].row()
                     bm = bmesh.new()
-                    bm.from_object(mo[0], context.depsgraph)
+                    bm.from_object(mo[0], context.evaluated_depsgraph_get())
                     detailRow.label(text="("+us(len(bm.verts))+")")
                     bm.free()
                 detailRow = dataCols[3].row()
